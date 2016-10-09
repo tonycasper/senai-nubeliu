@@ -1,0 +1,21 @@
+{
+  "name": "nubeliu1",
+  "authors": [
+    "Andre Gaspar <andregaspar_@hotmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-material": "^1.1.1"
+  }
+}

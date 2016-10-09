@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html ng-app="nubeliu">
+<head>
+	<title>Nubeliu</title>
+	<link rel="stylesheet" type="text/css" href="./bower_components/angular-material/angular-material.css" />
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+<div ng-controller="AppCtrl" ng-cloak>
+
+  <md-content>
+
+    <br>
+
+    <md-toolbar class="md-hue-2">
+      <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
+          <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+        </md-button>
+         <div>
+          <md-button ng-click="toggleLeft()" class="md-raised">
+            MENU
+          </md-button>
+        </div>
+        <h2>
+          <span>NUBELIU GRAPHIC</span>
+        </h2>
+          <md-icon md-svg-icon="img/icons/favorite.svg" style="color: black;"></md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="More">
+          <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <br>
+  </md-content>
+</div>
+<div ng-controller="AppCtrl" layout="column" style="height: 500px;" ng-cloak>
+
+  <section layout="row" flex>
+
+    <md-sidenav class="md-sidenav-left" md-component-id="left"
+                md-disable-backdrop md-whiteframe="4">
+
+      <md-toolbar class="md-theme-indigo">
+        <h1 class="md-toolbar-tools"></h1>
+      </md-toolbar>
+
+      <md-content layout-margin>
+        <p>
+          This sidenav is not showing any backdrop, where users can click on it, to close the sidenav.
+        </p>
+        <md-button ng-click="toggleLeft()" class="md-accent">
+          Close this Sidenav
+        </md-button>
+      </md-content>
+
+    </md-sidenav>
+
+    <md-content flex layout-padding>
+
+      <div layout="column" layout-align="top center">
+        <p>
+         CONTEUDO PRA CARALHO AQUI
+        </p>
+
+        
+
+      </div>
+
+    </md-content>
+
+  </section>
+
+</div>
+
+
+
+<script type="text/javascript" src="./bower_components/angular/angular.js"></script>
+<script type="text/javascript" src="./bower_components/angular-material/angular-material.js"></script>
+<script type="text/javascript" src="./bower_components/angular-animate/angular-animate.js"></script>
+<script type="text/javascript" src="./bower_components/angular-aria/angular-aria.js"></script>
+
+<script type="text/javascript">
+	var app = angular
+	.module('nubeliu', ['ngMaterial']);
+	angular
+  	.module('nubeliu', ['ngMaterial'])
+    .controller('AppCtrl', function ($scope, $timeout, $mdSidenav) {
+    $scope.toggleLeft = buildToggler('left');
+    $scope.toggleRight = buildToggler('right');
+
+    function buildToggler(componentId) {
+      return function() {
+        $mdSidenav(componentId).toggle();
+      }
+    }
+    angular.module('toolbarDemo1', ['ngMaterial'])
+
+	.controller('AppCtrl', function($scope) {
+
+});
+  });
+</script>
+</body>
+</html>
